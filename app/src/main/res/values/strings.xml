@@ -1,4 +1,6 @@
 <resources>
-    <string name="app_name">Inventory Management</string>
+    <string name="app_name">Rubens\'s Inventory</string>
     <string name="add_inventory_button">Add to Inventory</string>
+    <string name="to_back_button">To Back</string>
+    <string name="submit_button">Submit</string>
 </resources>

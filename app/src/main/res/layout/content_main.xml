@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    xmlns:tools="http://schemas.android.com/tools"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main">
 
     <Button
         android:id="@+id/goToAddProductButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/add_inventory_button"
-        android:backgroundTint="#009688"
+        android:backgroundTint="@color/colorPrimaryDark"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
         android:textSize="18sp"
