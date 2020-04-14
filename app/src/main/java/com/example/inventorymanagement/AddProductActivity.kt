@@ -20,9 +20,6 @@ class AddProductActivity : AppCompatActivity() {
                 putString("savedProductName", productNameEditText.text.toString())
             }.apply()
         }
-
-//        val addProductSubmitButton: Button = findViewById(R.id.addProductSubmitButton)
-//        addProductSubmitButton.setOnClickListener(View.OnClickListener { btnSubmitButton() })
     }
 
 //    private fun btnSubmitButton() {
