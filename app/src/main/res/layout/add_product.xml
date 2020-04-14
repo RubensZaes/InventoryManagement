@@ -41,7 +41,7 @@
         app:layout_constraintRight_toRightOf="parent"/>
 
     <Button
-        android:id="@+id/btnTestButton"
+        android:id="@+id/addProductSubmitButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/submit_button"
