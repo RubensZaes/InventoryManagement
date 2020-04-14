@@ -8,20 +8,27 @@ import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.add_product.*
 
-class AddProductActivity : AppCompatActivity () {
+class AddProductActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.add_product)
 
-        val addProductSubmitButton: Button = findViewById(R.id.addProductSubmitButton)
-        addProductSubmitButton.setOnClickListener(View.OnClickListener { btnSubmitButton() })
+        addProductSubmitButton.setOnClickListener {
+            val database = getSharedPreferences("database", Context.MODE_PRIVATE)
+            database.edit().apply {
+                putString("savedProductName", productNameEditText.text.toString())
+            }.apply()
+        }
+
+//        val addProductSubmitButton: Button = findViewById(R.id.addProductSubmitButton)
+//        addProductSubmitButton.setOnClickListener(View.OnClickListener { btnSubmitButton() })
     }
 
-    private fun btnSubmitButton() {
-        val database = getSharedPreferences("database", Context.MODE_PRIVATE)
-        database.edit().apply {
-            putString("savedProductName", productNameEditText.text.toString())
-        }.apply()
-    }
+//    private fun btnSubmitButton() {
+//        val database = getSharedPreferences("database", Context.MODE_PRIVATE)
+//        database.edit().apply {
+//            putString("savedProductName", productNameEditText.text.toString())
+//        }.apply()
+//    }
 }

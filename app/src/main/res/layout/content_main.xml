@@ -31,7 +31,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginLeft="16dp"
         android:layout_marginBottom="16dp"
-        android:textSize="24dp"
+        android:text="Exemple"
+        android:textSize="16dp"
         android:textStyle="bold"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
