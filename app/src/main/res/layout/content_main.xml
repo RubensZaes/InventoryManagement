@@ -9,19 +9,13 @@
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <Button
-        android:id="@+id/goToAddProductButton"
+    <TextView
+        android:id="@+id/productsTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/add_inventory_button"
-        android:backgroundTint="@color/colorPrimaryDark"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_margin="16dp"/>
 
     <TextView
         android:id="@+id/lastSavedProductTextView"
