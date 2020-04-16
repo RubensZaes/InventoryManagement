@@ -18,15 +18,35 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, AddProductActivity::class.java))
         }
 
-        val products = ProductsData().allProducts()
+        buttonFilterInexpensiveButton.setOnClickListener {
+            showInexpensive()
+        }
+
+        buttonFilterByNameButton.setOnClickListener {
+            showByName()
+        }
+    }
+
+    fun showInexpensive() {
+        val products = ProductsData().allProducts().filter { it.cost < 200 }
+        showProducts(products)
+    }
+
+    fun showByName() {
+        val products = ProductsData().allProducts().filter {it.owner.contains(AppConfig.filterByName, true)}
+        showProducts(products)
+    }
+
+    private fun showProducts(products: List<Product>) {
+
+        productsTextView.text = ""
 
         var totalCost = 0.0
 
+
         products.forEach {
-            if (it.owner.contains(AppConfig.filterByName, true)){
                 productsTextView.append("${it.name} - ${it.owner} - ${it.yearPurchased} - $${it.cost}\n \n")
                 totalCost += it.cost
-            }
         }
         lastSavedProductTextView.text = "$ $totalCost"
     }

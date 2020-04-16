@@ -13,7 +13,7 @@
         android:id="@+id/productsTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonFilterInexpensiveButton"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_margin="16dp"
         android:textSize="18sp"
@@ -25,11 +25,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/productsTextView"
         android:layout_marginLeft="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
         android:textSize="18dp"
         android:textColor="@android:color/holo_red_dark"
         android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/buttonFilterByNameButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rubens"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/buttonFilterInexpensiveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Under $200"
+        app:layout_constraintRight_toLeftOf="@id/buttonFilterByNameButton"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="8dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
