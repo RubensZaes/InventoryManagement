@@ -27,12 +27,12 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun showInexpensive() {
+    private fun showInexpensive() {
         val products = ProductsData().allProducts().filter { it.cost < 200 }
         showProducts(products)
     }
 
-    fun showByName() {
+    private fun showByName() {
         val products = ProductsData().allProducts().filter {it.owner.contains(AppConfig.filterByName, true)}
         showProducts(products)
     }
