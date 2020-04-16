@@ -18,36 +18,16 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, AddProductActivity::class.java))
         }
 
-        var products = listOf(
-            Product("Kotlin", "Rubens", 2020, 600.00),
-            Product("Android", "Stanley", 2020, 1020.37),
-            Product("Python", "Almeida", 2020, 100.51),
-            Product("Java", "Brandao", 2020, 435.00),
-            Product("Kotlin", "Rubens", 2020, 600.00),
-            Product("Android", "Stanley", 2020, 1020.37),
-            Product("Python", "Almeida", 2020, 100.51),
-            Product("Java", "Brandao", 2020, 435.00),
-            Product("Kotlin", "Rubens", 2020, 600.00),
-            Product("Android", "Stanley", 2020, 1020.37),
-            Product("Python", "Almeida", 2020, 100.51),
-            Product("Java", "Brandao", 2020, 435.00),
-            Product("Kotlin", "Rubens", 2020, 600.00),
-            Product("Android", "Stanley", 2020, 1020.37),
-            Product("Python", "Almeida", 2020, 100.51),
-            Product("Java", "Brandao", 2020, 435.00),
-            Product("Kotlin", "Rubens", 2020, 600.00),
-            Product("Android", "Stanley", 2020, 1020.37),
-            Product("Python", "Almeida", 2020, 100.51),
-            Product("Java", "Brandao", 2020, 435.00)
-        )
+        val products = ProductsData().allProducts()
 
         var totalCost = 0.0
 
         products.forEach {
-            productsTextView.append("${it.name} - ${it.owner} - ${it.yearPurchased} - $${it.cost}\n \n")
-            totalCost += it.cost
+            if (it.owner.contains(AppConfig.filterByName, true)){
+                productsTextView.append("${it.name} - ${it.owner} - ${it.yearPurchased} - $${it.cost}\n \n")
+                totalCost += it.cost
+            }
         }
-
         lastSavedProductTextView.text = "$ $totalCost"
     }
 }
